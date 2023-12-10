@@ -1,0 +1,74 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title> Easy-Trip</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="../Templete/css/style.css" type="text/css" media="all" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link href="../Templete/css/slider.css" rel="stylesheet" type="text/css" media="all"/>
+    <script src="../Templete/js/jquery.min.js"></script>
+    <script src="../Templete/js/responsiveslides.min.js"></script>
+
+  <script>
+    // You can also use "$(window).load(function() {"
+    $(function () {
+      // Slideshow 1
+      $("#slider1").responsiveSlides({
+         auto: true,
+		 nav: true,
+		 speed: 500,
+		 namespace: "callbacks",
+      });
+    });
+  </script>
+</head>
+<body>
+<div class="header">
+<div class="wrap">
+<div class="logo"><a href="index.html"><img src="../Templete/images/logo.png" alt="" /></a></div>
+   <div class="con-right">
+			<div class="grid1-l-img">
+                    <img src="../Templete/images/contact.png" alt="">
+			</div>
+			<div class="grid1-l-desc">
+				<p>Contact : +91 00000-55555</p>
+			</div>
+			<div class="clear"></div>
+	</div>
+    <div class="clear"></div>
+     </div>
+</div>
+<div class="header-bottom">
+    	<div class="wrap">
+    		<ul id="nav">
+                <li><a href="/Home/Index">Home</a></li>
+                <li><a class="hsubs" href="/Home/About">About</a></li>
+                <li><a class="hsubs" href="destinations.html">Destinations</a>
+                    <ul class="subs">
+                        <li><a href="#">Hotels</a></li>
+                        <li><a href="#">Restaurants</a></li>
+                        <li><a href="#">Beach Resorts</a></li>
+                    </ul>
+                </li>
+                <li><a class="hsubs" href="destinations.html">Free Travel Guides</a></li>
+                <li><a href="contact.html">Contact</a></li>
+        </ul>
+       </div>
+</div>
+ 
+
+     <div class"content">
+      
+         @RenderBody()
+
+
+<div class="footer-bottom">
+<div class="wrap">	
+	<div class="copy">
+		<p>&copy; 2013 Easy-Trip. All Rights Reserved | Design by <a href="http://w3layouts.com">W3Layouts</a></p>
+	</div>
+ </div>
+</div>
+</body>
+</html>
