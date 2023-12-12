@@ -1,0 +1,24 @@
+﻿@using Web.Models;
+@model List<About>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Test.cshtml";
+}
+ 
+<html>
+<body>
+	<div class="content">
+		<div class="wrap">
+			<div class="about">
+				<h3>About</h3>
+				@foreach (var item in Model)
+				{
+					<img src=@item.ImageUrl alt="" />
+					<p>@item.Explanation</p>
+				}
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -10,15 +10,10 @@ public class Context : DbContext
 	public DbSet<Blog> Blogs { get; set; }
 	public DbSet<Comment> Comments { get; set; }
 	public DbSet<Contact> Contacts { get; set; }
-
-	private IConfiguration configuration;
-	public Context(IConfiguration configuration)
-	{
-		this.configuration = configuration;
-    }
+ 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 	{
-		optionsBuilder.UseSqlServer(configuration.GetConnectionString("MainDatabase"));
+		optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Travel;Integrated Security=True");
 	}
 	 
 }
