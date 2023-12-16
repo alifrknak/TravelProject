@@ -1,0 +1,11 @@
+﻿@using Web.Models;
+@model List<Blog>
+
+@foreach (var blog in Model)
+{	
+<div class="bot-left" >
+	<img src=@blog.BlogImage />
+	<h4>@blog.Header</h4>
+	<p>@blog.Explanation</p>
+</div>
+}

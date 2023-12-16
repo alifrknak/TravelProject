@@ -1,5 +1,7 @@
-﻿@{
-	Layout = "~/Views/Shared/_Test.cshtml";
+﻿@using Web.Models;
+@model List<Blog>
+@{
+    Layout = "~/Views/Shared/_Test.cshtml";
 }
 
 <!DOCTYPE HTML>
@@ -30,6 +32,7 @@
 							</div>
 							<div class="clear"></div>
 					</div>
+                        @Html.ActionLink("","GetPartialView","Home")
 	<div class="con-text">
 			<div class="grid1-img">
 				<img src="images/group.png" alt="">
@@ -54,10 +57,11 @@
 
  <div class="slider">
 	    <ul class="rslides" id="slider1">
-	      <li><img src="images/img1.jpg" alt=""></li>
-	      <li><img src="images/img2.jpg" alt=""></li>
-	      <li><img src="images/img3.jpg" alt=""></li>
-		   <li><img src="images/img4.jpg" alt=""></li>
+	      @foreach (var blog in Model)
+          {
+            <li><img src=@blog.BlogImage alt=""></li>
+          }
+	      
 	    </ul>
     </div>
 	       </div>                                        
@@ -76,7 +80,7 @@
       	</div>
       
       		<div class="grids">
-      	<div class="box1">
+      	< class="box1">
                                 <div class="padding">
                                     <h4>This Week's Top 10</h4>
                                     <ul class="list list-pad">
@@ -143,7 +147,7 @@
                                     </div>
                       </div>
                         <div class="clear"></div>      
-      	</div
+      	
      </div>
       </div>
       </div></div>

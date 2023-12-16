@@ -1,5 +1,5 @@
 ﻿@using Web.Models
-@model List<Blog>
+@model Blog
 
 @{
     ViewData["Title"] = "BlogDetail";
@@ -41,13 +41,15 @@
 						<div class="content-grid-info">
 							<img src="images/post1.jpg" alt="" />
 							<div class="post-info">
-								@foreach (var item in Model)
-								{
-									<img src=@item.BlogImage />
-									<h2>@item.Header</h2>
-									<p>@item.Explanation</p>
+								<img src=@Model.BlogImage />
+									<h2>@Model.Header</h2>
+									<p>@Model.Explanation</p>
 								}
-
+								@foreach (var item in Model.Comments)
+								{
+									<h3>@item.Mail</h3><br/>
+									<p>@item.Content</p>
+								}
 								<h4><a href="single.html">Lorem ipsum dolor sit amet</a>  July 30, 2014 / 27 Comments</h4>
 								<p>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis.</p>
 								<a href="single.html"><span></span>READ MORE</a>
