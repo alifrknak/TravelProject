@@ -1,11 +1,12 @@
 ﻿@using Web.Models;
 @model List<Blog>
 
-@foreach (var blog in Model)
-{	
+@foreach (var blog in Model){	
 <div class="bot-left" >
 	<img src=@blog.BlogImage />
 	<h4>@blog.Header</h4>
-	<p>@blog.Explanation</p>
+	<span>@blog.CreateTime.ToString("dd:MM:yyyy")</span>
+	<p>@blog.Explanation.Substring(0,100)</p>
+	<a href="/Blog/BlogDetail/@blog.Id">read more</a>
 </div>
 }

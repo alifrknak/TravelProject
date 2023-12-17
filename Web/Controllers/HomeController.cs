@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Web.Models;
 
 namespace Web.Controllers
@@ -18,6 +19,10 @@ namespace Web.Controllers
 			var values = _context.Blogs.OrderByDescending(q => q.Id).Take(2).ToList();
 			return PartialView(values);
 		}
-        
-    }
+		public PartialViewResult BestBlogs()
+		{
+			var values = _context.Blogs.ToList();
+			return PartialView(values);
+		}
+	}
 }

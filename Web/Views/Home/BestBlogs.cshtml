@@ -1,0 +1,18 @@
+﻿@using Web.Models
+@model List<Blog>
+
+<div class="padding1">
+	<h4>Our Best Places</h4>
+	<div class="box-left">
+		@foreach (var blog in Model)
+		{
+			<div class="bot-img">
+				<img src=@blog.BlogImage alt="" />
+			</div>
+			<div class="bot-desc">
+				<p>@blog.Explanation.Substring(0,50)</p>
+			</div>
+			<div class="clear"></div>
+		}
+	</div>
+</div>
